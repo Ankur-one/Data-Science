@@ -1,0 +1,7 @@
+# import MyModule
+
+# MyModule.say_hello('Ankur')
+# MyModule.say_bye('Rukna')
+
+from MyModule import person1
+print(person1['Age'])
