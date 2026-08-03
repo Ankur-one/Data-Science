@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 24px; background: #f7f9fc; color: #222; }
+        .card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin-bottom: 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+        img { width: 100%; border-radius: 8px; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background: #f0f4f8; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>{{ title }}</h1>
+        <p>This Flask app loads the Iris dataset from Seaborn, shows a quick dataset preview, and displays basic EDA plots.</p>
+    </div>
+
+    <div class="card">
+        <h2>Dataset Overview</h2>
+        <p><strong>Rows:</strong> {{ rows }} | <strong>Columns:</strong> {{ columns }}</p>
+        <p><strong>Species counts:</strong> {{ species_counts }}</p>
+    </div>
+
+    <div class="card">
+        <h2>Data Preview</h2>
+        {{ preview | safe }}
+    </div>
+
+    <div class="card">
+        <h2>Summary Statistics</h2>
+        {{ summary | safe }}
+    </div>
+
+    <div class="card">
+        <h2>EDA Plots</h2>
+        <div class="grid">
+            <div><img src="data:image/png;base64,{{ plots.scatter }}" alt="Scatter plot"></div>
+            <div><img src="data:image/png;base64,{{ plots.histogram }}" alt="Histogram"></div>
+            <div><img src="data:image/png;base64,{{ plots.heatmap }}" alt="Correlation heatmap"></div>
+        </div>
+    </div>
+</body>
+</html>
