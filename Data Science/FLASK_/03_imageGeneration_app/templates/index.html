@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AI Image Generator</title>
+</head>
+
+<body>
+
+    <h2>AI Image Generator</h2>
+
+    <form method="POST">
+
+        <input
+            type="text"
+            name="prompt"
+            placeholder="Enter image prompt"
+            style="width:400px;">
+
+        <button type="submit">
+            Generate
+        </button>
+
+    </form>
+
+    {% if error %}
+        <h3 style="color:red;">
+            {{ error }}
+        </h3>
+    {% endif %}
+
+    {% if image_path %}
+
+        <h3>Generated Image</h3>
+
+        <img
+            src="{{ image_path }}"
+            width="500">
+
+        <br><br>
+
+        <a href="{{ image_path }}" download>
+            Download Image
+        </a>
+
+    {% endif %}
+
+</body>
+
+</html>
