@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Google Text To Speech</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Google Text To Speech</h1>
+
+{% if error %}
+<div class="error-banner">{{ error }}</div>
+{% endif %}
+
+<form action="/convert" method="POST">
+
+<input
+type="text"
+name="filename"
+placeholder="Enter File Name"
+required>
+
+<textarea
+name="text"
+rows="8"
+placeholder="Enter text here..."
+required></textarea>
+
+<select name="voice">
+
+<option value="en-US-Wavenet-D">
+Male</option>
+
+<option value="en-US-Wavenet-F">
+Female</option>
+
+<option value="en-US-Standard-C">
+Standard Female</option>
+
+<option value="en-US-Standard-B">
+Standard Male</option>
+
+</select>
+
+<button type="submit">
+
+Convert to Speech
+
+</button>
+
+</form>
+
+</div>
+
+</body>
+
+</html>
