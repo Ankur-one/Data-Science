@@ -1,0 +1,8 @@
+2026-07-04 11:35:08,803 - INFO - Logger Started
+2026-07-04 11:46:15,006 - INFO - Application Started
+2026-07-04 11:48:24,906 - INFO - Logger Started
+2026-07-04 11:48:27,925 - INFO - Application Started
+2026-07-04 11:58:25,912 - INFO - Logger Started
+2026-07-04 11:58:28,767 - INFO - Application Started
+2026-07-04 12:10:00,251 - ERROR - No such comm target registered: jupyter.widget.control
+2026-07-04 12:10:00,260 - WARNING - No such comm: 08ea3024-d1ed-4a3f-a4cf-5d8bea793f2f
